@@ -64,8 +64,11 @@
 
         $("#submit").click(function(event){
             var email = document.getElementById("email").value;
-            if(email.search("@") == -1){
+            var contact = document.getElementById("contact").value;
+            if(email.search("@") == -1 ){
                 alert("Enter correct email");
+            }else if(contact.toString().length <10){
+                alert("Enter correct contact number");
             }else{
 
       alert("Your slot has been added");}
