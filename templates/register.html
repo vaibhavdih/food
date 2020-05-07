@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Partner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="icon" href="{% static "img/logo.jpeg" %}">
+</head>
+<body>
+<section class="section-book">
+    <div class="container">
+        <div class="row">
+            <div class="book">
+                <div class="book__form">
+                    <form action="register/" method="POST" class="form">
+                        <div class="u-margin-bottom-medium">
+                            <h2 class="heading-secondary"> Register</h2>
+                        </div>
+                        <div class="form__group"> <input type="text" name="name" class="form__input" id="name" placeholder="Organisation name" style="box-shadow: 4px 5px 5px 0px rgba(179,172,179,1);"required>
+                        <label for="name" class="form__label">Organisation name</label>
+                    </div>
+                        <div class="form__group">
+                            <input type="hidden" class="form__input" name="date" id="date" value="{{ date }}" placeholder="Date">
+                        </div>
+                        <div class="form__group">
+                            <input type="hidden" class="form__input" id="pincode" name="pincode" value="{{ pincode }}" placeholder="Pincode">
+                        </div>
+                        <div class="form__group">
+                            <input type="hidden" name="time" id="time" class="form__input " value="{{ time }}">
+                    </div>
+                        <div class="form__group"> <input type="tel" name="contact" id="contact" class="form__input" placeholder="Contact number" style="box-shadow: 4px 5px 5px 0px rgba(179,172,179,1);" required>
+                            <label for="contact" class="form__label select ">Contact number</label>
+                        </div>
+                        <div class="form__group">
+                            <input type="email" name="email" id="email" class="form__input" placeholder="Email Address" style="box-shadow: 4px 5px 5px 0px rgba(179,172,179,1);" required>
+                            <label for="email" class="form__label select ">Email address</label>
+                        </div>
+                        <div class="form__group">
+                            <input type="number" name="units" id="units" class="form__input" placeholder="Number of food packets" style="box-shadow: 4px 5px 5px 0px rgba(179,172,179,1);" required>
+                            <label for="units" class="form__label select ">Number of food packets</label>
+                        </div>
+                        <div class="form__group ">
+                            <button type="submit " id="submit" class="btn ">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+
+
+        $("#submit").click(function(event){
+
+      alert("Your slot has been added");
+ });
+
+
+
+</script>
+
+</body>
+</html>

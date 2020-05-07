@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Partner</title>
+    <link rel="icon" href="{% static "img/logo.jpeg" %}">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/cards.css" %}">
+    <style>.btn, .btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .2s;
+  position: relative;
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer; }
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.btn_submit_hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
+
+.btn:active, .btn:focus {
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+</style>
+</head>
+
+<body>
+    <div class="container">
+    <h3 style="font-size: 3rem;color: red;margin-top: 6px;">{{ pincode }}</h3>
+        <h4 class="heading-secondary" style="margin-top: 15px; margin-bottom: 10px;">{{ key }} Organizations serving on {{ date }} {{ time }}
+
+        </h4>
+       {% if key != 0 %}
+           {% for slot in slots %}
+
+                <div class="box">
+                    <div class="box-1">
+                        <div class="box-heading">
+                            <h2 class="heading-tertiary">
+                                {{ slot.organisation_name }}
+                            </h2>
+                        </div>
+                        <div class="contact heading-fourth"> +91
+                            {{ slot.contact }}
+                        </div>
+                        <div class="email heading-fourth">
+                            {{ slot.email_address }}
+                        </div>
+                        <div class="qty heading-fourth">
+                            {{ slot.no_packets }} Food packets </div>
+                    </div>
+                </div>
+           {% endfor %}
+                {% else %}
+
+                        <h7 style="color: black; margin-top:10px;text-align: center; font-size: 2rem;">No data for available date.</h7>
+                        {% endif %}
+
+                    <form action="reg/" method="POST" class="form">
+                        <div class="form__group">
+                            <input type="hidden" class="form__input" name="date" id="date" value="{{ date }}" placeholder="Date">
+                        </div>
+                        <div class="form__group">
+                            <input type="hidden" class="form__input" id="pincode" name="pincode" value="{{ pincode }}" placeholder="Pincode">
+                        </div>
+                        <div class="form__group">
+                            <input type="hidden" name="time" id="time" class="form__input " value="{{ time }}"></div>
+                        <div class="form__group ">
+                            <button type="submit " class="btn_submit_hover" id="submit" style="margin-top: 22px;margin-bottom: 15px;background-color: #ffb900;padding: 1.5rem 4rem;font-size: 1.6rem; display: inline-block;
+  border-radius: 10rem;border: none;cursor: pointer;">Add Slot</button>
+                        </div>
+
+                    </form>
+    <a href="/" class="btn">Back</a>
+
+    </div>
+</body>
+
+</html>
