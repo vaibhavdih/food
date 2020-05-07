@@ -58,8 +58,12 @@
 
 
         $("#submit").click(function(event){
+            var email = document.getElementById("email").value;
+            if(email.search("@") == -1){
+                alert("Enter correct email");
+            }else{
 
-      alert("Your slot has been added");
+      alert("Your slot has been added");}
  });
 
 
