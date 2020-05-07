@@ -22,12 +22,17 @@
                         <div class="form__group"> <input type="text" name="name" class="form__input" id="name" placeholder="Organisation name" style="box-shadow: 4px 5px 5px 0px rgba(179,172,179,1);"required>
                         <label for="name" class="form__label">Organisation name</label>
                     </div>
+
+                        <div class="form__group"> <input type="text" name="places" class="form__input" id="places" placeholder="Places receiving food" style="box-shadow: 4px 5px 5px 0px rgba(179,172,179,1);">
+                        <label for="places" class="form__label">Places to be covered</label>
+                    </div>
                         <div class="form__group">
                             <input type="hidden" class="form__input" name="date" id="date" value="{{ date }}" placeholder="Date">
                         </div>
                         <div class="form__group">
                             <input type="hidden" class="form__input" id="pincode" name="pincode" value="{{ pincode }}" placeholder="Pincode">
                         </div>
+
                         <div class="form__group">
                             <input type="hidden" name="time" id="time" class="form__input " value="{{ time }}">
                     </div>

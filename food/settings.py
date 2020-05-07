@@ -25,7 +25,7 @@ SECRET_KEY = ')0+wlnk_+^wn7k6#xp_-4ou=3)cj62(i!r&s0r+o)0ymk#je9b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','192.168.43.144','18.190.28.252']
+ALLOWED_HOSTS = ['127.0.0.1','192.168.43.144','18.190.28.252','www.donatefood.online','donatefood.online']
 
 
 # Application definition

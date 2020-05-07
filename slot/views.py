@@ -34,8 +34,9 @@ def register_booking(request):
         contact=request.POST['contact']
         email=request.POST['email']
         units = request.POST['units']
+        places=request.POST['places']
 
-        a=Bookings.objects.create(slot_date=date,slot_time=time,pincode=pincode,organisation_name=name,contact=contact,email_address=email,no_packets=units)
+        a=Bookings.objects.create(slot_date=date,slot_time=time,pincode=pincode,organisation_name=name,contact=contact,email_address=email,no_packets=units,donate_address=places)
         slots = Bookings.objects.filter(slot_date=date, pincode=pincode, slot_time=time)
         if len(slots) == 0:
             key = 0

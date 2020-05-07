@@ -56,20 +56,23 @@
                                 {{ slot.organisation_name }}
                             </h2>
                         </div>
-                        <div class="contact heading-fourth"> +91
-                            {{ slot.contact }}
+                        <div class="contact heading-fourth">
+                            +91 {{ slot.contact }}
                         </div>
                         <div class="email heading-fourth">
                             {{ slot.email_address }}
                         </div>
                         <div class="qty heading-fourth">
                             {{ slot.no_packets }} Food packets </div>
+                        <div class="heading-fourth">
+                            Areas :- {{ slot.donate_address }}
+                        </div>
                     </div>
                 </div>
            {% endfor %}
                 {% else %}
 
-                        <h7 style="color: black; margin-top:10px;text-align: center; font-size: 2rem;">No data for available date.</h7>
+                       <br> <h7 style="color: black; margin-top:10px;text-align: center; font-size: 2rem;">No data for available date.</h7>
                         {% endif %}
 
                     <form action="reg/" method="POST" class="form">
